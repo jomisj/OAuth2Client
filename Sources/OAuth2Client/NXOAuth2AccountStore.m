@@ -585,6 +585,7 @@ NSString * const kNXOAuth2AccountStoreAccountType = @"kNXOAuth2AccountStoreAccou
     NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:
                            (__bridge NSString *)kSecClassGenericPassword, kSecClass,
                            serviceName, kSecAttrService,
+                           kSecAttrAccessibleAfterFirstUnlock, kSecAttrAccessible,
                            kCFBooleanTrue, kSecReturnAttributes,
                            nil];
     CFTypeRef cfResult = nil;
@@ -609,6 +610,7 @@ NSString * const kNXOAuth2AccountStoreAccountType = @"kNXOAuth2AccountStoreAccou
     NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:
                            (__bridge NSString *)kSecClassGenericPassword, kSecClass,
                            serviceName, kSecAttrService,
+                           kSecAttrAccessibleAfterFirstUnlock, kSecAttrAccessible,
                            @"OAuth 2 Account Store", kSecAttrLabel,
                            data, kSecAttrGeneric,
                            nil];

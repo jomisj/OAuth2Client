@@ -231,6 +231,7 @@
     NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:
                            (__bridge NSString *)kSecClassGenericPassword, kSecClass,
                            serviceName, kSecAttrService,
+                           kSecAttrAccessibleAfterFirstUnlock, kSecAttrAccessible,
                            kCFBooleanTrue, kSecReturnAttributes,
                            nil];
     CFTypeRef cfResult = nil;
@@ -252,6 +253,7 @@
     NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:
                            (__bridge NSString *)kSecClassGenericPassword, kSecClass,
                            serviceName, kSecAttrService,
+                           kSecAttrAccessibleAfterFirstUnlock, kSecAttrAccessible,
                            @"OAuth 2 Access Token", kSecAttrLabel,
                            data, kSecAttrGeneric,
                            nil];
